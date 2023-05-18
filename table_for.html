@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Boucle for...in</title>
+</head>
+<body>
+    <form method="post" action="">
+        <input type="button" value="generate_table()" onclick="generateTable()">
+    </form>
+
+    <table id="table">
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+    <script>
+        
+        function generateTable(table, data){
+
+            let tbl = document.getElementById("table");
+            let tbody = document.createElement("tbody");
+
+            let fruits = [
+                {nom:"banane",quantité:"150kg",prix:"400f/kg"},
+                {nom:"orange",quantité:"100kg",prix:"250f/kg"},
+                {nom:"melon",quantité:"200kg",prix:"500f/kg"},
+                {nom:"mangue",quantité:"350kg",prix:"800f/kg"},
+                {nom:"pomme",quantité:"80kg",prix:"150f/kg"},
+
+            ];
+             
+            function generateTable(table, data){
+
+                for(let element of data){
+                let row = document.createElement("tr");
+
+                for(let key in element){
+                    let cell = document.createElement("td");
+                    let text = document.createTextNode(element[key]); 
+
+                    cell.appendChild(text);
+                    row.appendChild(cell);
+                }
+
+                tbody.appendChild(row);
+                
+            
+                }
+                
+            }
+
+            console.log(fruits);
+            tbl.appendChild(tbody);
+            let = data = Object.keys(fruits[0]);            
+            generateTable(table, fruits);
+        }
+            
+
+    </script>
+
+</body>
+</html>
